@@ -1,0 +1,47 @@
+JarvisAI/
+│
+├── main.py                        # Entry point: GUI + Jarvis loop
+├── .env                           # Environment variables (offline/online toggle, keys if needed)
+├── requirements.txt              # Python dependencies (minimal)
+│
+├── core/
+│   ├── __init__.py
+│   ├── voice_input.py            # Voice recognition (Google/Vosk etc.)
+│   ├── text_to_speech.py         # pyttsx3 text-to-voice engine
+│   ├── reminder_manager.py       # Local SQLite-based reminders
+│   ├── time_utils.py             # Clock/time utilities
+│   ├── command_router.py         # Logic to handle user commands
+│   ├── context_engine.py         # Time, ambient sound, history awareness
+│   └── app_controller.py         # Open apps, volume, etc.
+│
+├── nlp/
+│   ├── __init__.py
+│   ├── local_brain.py            # Rule-based or small offline model logic
+│   └── intent_parser.py          # Detects user intent from text
+│
+├── interface/
+│   ├── __init__.py
+│   ├── dashboard.py              # Tkinter GUI (modular)
+│   └── logger.py                 # Logging for actions & messages
+│
+├── data/
+│   ├── jarvis.db                 # SQLite DB for reminders/learning
+│   └── history.json              # Optional: Stores command history
+│
+├── models/
+│   └── vosk-model/               # Offline speech-to-text models (if used)
+│
+└── utils/
+    ├── env_loader.py            # Load & manage environment variables
+    └── file_utils.py            # Helper functions (e.g., read/write files)
+
+
+
+--------------------------------------------------------------
+JarvisAI_Offline/
+├── main.py
+├── modules/
+│   ├── reminder.py
+│   ├── status.py
+│   └── weather.py
+└── .env  (optional for later)
